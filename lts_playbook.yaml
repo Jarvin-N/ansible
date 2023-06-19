@@ -32,5 +32,3 @@
 
       - name: Reboot the server.
         reboot:
-
-      when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '18.04'
