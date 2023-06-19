@@ -4,15 +4,6 @@
 
   tasks:
 
-    # Use a block to perform tasks conditionally—only if running Ubuntu 18.04.
-    - block:
-
-      - debug:
-          msg: 'This server is running Ubuntu 18.04 LTS and will be upgraded to 20.04 LTS.'
-
-      # Now would be a good time to take a backup if you can trigger an
-      # automated backup!
-
       - name: Remove the EOL message of the day if one exists.
         file:
           path: "{{ item }}"
@@ -33,6 +24,5 @@
       - name: Reboot the server.
         reboot:
         
-      when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '18.04'
 
        
